@@ -1,3 +1,4 @@
+// %Tag(FULLTEXT)%
 #include <ros/ros.h>
 #include <generic_control_toolbox/kdl_manager.hpp>
 
@@ -32,3 +33,4 @@ int main (int argc, char ** argv)
   manager.getGrippingPoint("left_hand", state, pose);
   ROS_INFO_STREAM("The left hand gripping point position is " << pose.p.x() << ", " << pose.p.y() << ", " << pose.p.z());
 }
+// %EndTag(FULLTEXT)%
