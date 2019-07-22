@@ -9,7 +9,9 @@ int main (int argc, char ** argv)
 
   // Initialize a KDL manager instance with the 'torso' link configured as its
   // base frame.
+  // %Tag(Construct)%
   generic_control_toolbox::KDLManager manager("torso");
+  // %EndTag(Construct)%
 
   // Load a kinematic chain which goes from the base frame ('torso') to a
   // user-configured end-effector ('left_hand')
