@@ -1,3 +1,4 @@
+# %Tag(FULLTEXT)%
 cmake_minimum_required(VERSION 2.8.3)
 project(kdl_manager_tutorial)
 
@@ -21,3 +22,5 @@ include_directories(
 add_executable(load_chain src/load_chain.cpp)
 target_link_libraries(load_chain ${catkin_LIBRARIES})
 add_dependencies(load_chain ${catkin_EXPORTED_TARGETS})
+
+# %EndTag(FULLTEXT)%
