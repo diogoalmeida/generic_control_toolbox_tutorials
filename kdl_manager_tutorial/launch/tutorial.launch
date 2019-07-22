@@ -1,4 +1,5 @@
 <launch>
   <param name="robot_description" command="$(find xacro)/xacro.py --inorder $(find baxter_description)/urdf/baxter.urdf.xacro gazebo:=false"/>
-  <node pkg="kdl_manager_tutorial" type="load_chain" name="load_chain" />
+  <node pkg="kdl_manager_tutorial" type="load_chain" name="load_chain" output="screen"/>
+  <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher"/>
 </launch>
