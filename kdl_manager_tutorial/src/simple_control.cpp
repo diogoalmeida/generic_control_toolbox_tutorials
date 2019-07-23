@@ -14,11 +14,13 @@ int main (int argc, char ** argv)
   ros::init(argc, argv, "simple_control");
   ros::NodeHandle nh;
 
+  // Define the communications with the robot
   // %Tag(ROSCOMM)%
   ros::Subscriber state_sub = nh.subscribe("/joint_states", 1, &stateCb);
   ros::Publisher command_pub = nh.advertise<sensor_msgs::JointState>("/joint_command", 1);
   // %EndTag(ROSCOMM)%
 
+  // Initialize a KDL manager on the robot's left arm
   generic_control_toolbox::KDLManager manager("torso");
   manager.initializeArm("left_hand");
 
@@ -47,6 +49,8 @@ int main (int argc, char ** argv)
       ROS_INFO_THROTTLE(0.5,
                         "Position error: (%.2f, %.2f, %.2f)",
                         error.x(), error.y(), error.z());
+
+      // Get the IK solution for the desired control command.
       // %Tag(IK)%
       manager.getVelIK("left_hand", state, command_vel, q_dot);
       command = state;
