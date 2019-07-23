@@ -24,3 +24,9 @@ target_link_libraries(load_chain ${catkin_LIBRARIES})
 add_dependencies(load_chain ${catkin_EXPORTED_TARGETS})
 
 # %EndTag(FULLTEXT)%
+
+# %Tag(CONTROL)%
+add_executable(simple_control src/simple_control.cpp)
+target_link_libraries(simple_control ${catkin_LIBRARIES})
+add_dependencies(simple_control ${catkin_EXPORTED_TARGETS})
+# %EndTag(CONTROL)%
